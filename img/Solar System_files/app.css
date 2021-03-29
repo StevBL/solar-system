@@ -1,0 +1,275 @@
+/*---------------  GENERAL STYLES  -----------------*/
+
+html,
+body,
+.space {
+  width: 100%;
+  height: 100%;
+  font-family: courier, arial, helvetica;
+  background-color: black;
+  overflow: hidden;
+}
+
+.space {
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-image: url(../img/space_bg.png);
+  animation: spaceMove 60s linear infinite;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.solar-container {
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+  flex: 1;
+  justify-content: space-around;
+}
+
+.solar-caption {
+  display: flex;
+  align-content: space-between;
+  height: 90px;
+  width: 90px;
+}
+
+/*---------------  BACKGROUND PLANETS  -----------------*/
+.sun-bg {
+  width: 100%;
+  height: 100%;
+  background-color: #fbd009;
+  border-radius: 50%;
+  background-image: url(../img/sun.png);
+  background-size: auto;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  animation: rotar 50s linear infinite;
+  order: 5;
+}
+
+.mercury-bg {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #a17837;
+  background-image: url(../img/mercury.png);
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  animation: rotar 50s linear infinite;
+  order: 4;
+}
+
+.venus-bg {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #ce467e;
+  background-image: url(../img/venus.png);
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  animation: rotar 50s linear infinite;
+  order: 6;
+}
+
+.earth-bg {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #86daf1;
+  background-image: url(../img/earth.png);
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  animation: rotar 50s linear infinite;
+  order: 7;
+}
+
+.mars-bg {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #ff4f19;
+  background-image: url(../img/mars.png);
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  animation: rotar 50s linear infinite;
+  order: 3;
+}
+
+.jupiter-bg {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #df7a47;
+  background-image: url(../img/jupiter.png);
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  animation: rotar 50s linear infinite;
+  order: 8;
+}
+
+.saturn-bg {
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/saturn.png);
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  order: 2;
+}
+
+.uranus-bg {
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/uranus.png);
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  order: 9;
+}
+
+.neptune-bg {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #2542b2;
+  background-image: url(../img/neptune.png);
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  animation: rotar 50s linear infinite;
+  order: 1;
+}
+
+/*---------------  ORDER PLANETS  -----------------*/
+
+.orbit-neptune {
+  order: 1;
+}
+.orbit-saturn {
+  order: 2;
+}
+
+.orbit-mars {
+  order: 3;
+}
+
+.orbit-mercury {
+  order: 5;
+}
+
+.orbit-sun {
+  order: 4;
+}
+
+.orbit-venus {
+  order: 9;
+}
+
+.orbit-earth {
+  order: 6;
+}
+
+.orbit-jupiter {
+  order: 7;
+}
+
+.orbit-uranus {
+  order: 6;
+}
+
+/*---------------  CARD INFOMATION PLANET  -----------------*/
+
+.solar-info {
+  padding: 3% 6%;
+  width: 200px;
+  margin-top: 100%;
+  visibility: hidden;
+  font-size: 12px;
+  background-color: white;
+  color: black;
+  border-radius: 6px;
+  z-index: 1;
+}
+
+.solar-info::after {
+  content: " ";
+  position: absolute;
+  bottom: 0%; /* At the top of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
+}
+
+.solar-caption:hover .solar-info {
+  visibility: visible;
+}
+
+/*---------------  ANIMATIONS  -----------------*/
+
+#inner-orbit {
+  position: absolute;
+  top: 75px;
+  left: 75px;
+  width: 150px;
+  height: 150px;
+  border: 2px #4a437f dashed;
+  border-radius: 100%;
+  -webkit-animation: spin-right 10s linear infinite;
+  animation: spin-right 10s linear infinite;
+}
+
+/*---------------  ANIMATIONS  -----------------*/
+@keyframes spaceMove {
+  0% {
+    background-position-y: 1000px;
+  }
+  50% {
+    background-position-y: 0px;
+  }
+  100% {
+    background-position-y: 1000px;
+  }
+}
+
+@keyframes rotar {
+  0% {
+    background-position-x: 1000px;
+  }
+
+  50% {
+    background-position-x: 0px;
+  }
+
+  100% {
+    background-position-x: 1000px;
+  }
+}
+
+@keyframes orbite {
+  from {
+    transform: rotate(0deg) translateX(150px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(150px) rotate(-360deg);
+  }
+}
